@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + Vue</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      (function setHtmlFont() {
+        if (!window || !window.innerWidth) return false;
+        var doc = document.documentElement || document.body;
+        if (window.innerWidth >= 1440) {
+          return (doc.style.fontSize = "100px");
+        }
+        if (window.innerWidth < 1000 && window.innerWidth > 640) {
+          return (doc.style.fontSize = "45px");
+        } else if (window.innerWidth < 640) {
+          doc.style.fontSize = (window.innerWidth / 750) * 100 + "px";
+        } else {
+          doc.style.fontSize = (window.innerWidth / 1440) * 100 + "px";
+        }
+      })();
+
+      window.addEventListener("resize", function () {
+        setHtmlFont();
+      });
+    </script>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

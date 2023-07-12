@@ -1,0 +1,11 @@
+@function px2rem($px) {
+  @return ($px / 100) + rem;
+}
+@function xspx2rem($px) {
+  @return ($px * 2 / 100) + rem;
+}
+
+$basic-color: rgba(255, 12, 87, 0.1);
+$line-bg1: rgba(255, 12, 87, 1);
+$line-bg2: rgba(244, 211, 161, 1);
+$text-1: rgba(0, 0, 0, 1);
